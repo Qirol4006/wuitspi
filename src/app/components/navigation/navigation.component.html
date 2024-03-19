@@ -1,0 +1,22 @@
+<mat-toolbar class="flex justify-between">
+  <button mat-icon-button
+          class="example-icon"
+          aria-label="Home">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>WIUT SPI APP</span>
+  <div class="flex justify-center my-4 mx-3">
+    <button mat-button [matMenuTriggerFor]="menu">Categories</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item
+              *ngFor="let category of categories">
+        {{ category.name }}
+      </button>
+      <button mat-menu-item
+              (click)="openAddMenu()">
+        Add
+      </button>
+    </mat-menu>
+    <a mat-button href="">Link</a>
+  </div>
+</mat-toolbar>
