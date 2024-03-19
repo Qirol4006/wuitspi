@@ -7,6 +7,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {AddCategoryComponent} from "../add-category/add-category.component";
 import {CategoryService} from "../category.service";
 import {NgForOf} from "@angular/common";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navigation',
@@ -45,5 +46,14 @@ export class NavigationComponent {
 
   openAddMenu(){
     const dialogRef = this.dialog.open(AddCategoryComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      this.loadAllCategories();
+    });
+  }
+
+  router =inject(Router)
+
+  routerNavigate(url: string){
+    this.router.navigateByUrl(url)
   }
 }

@@ -13,8 +13,9 @@
     <button mat-raised-button
             color="accent"
             [disabled]="!categoryModel.name"
+            [mat-dialog-close]="true"
             (click)="createCategory()">
-      Create
+      {{ id ? 'Update' : 'Create' }}
     </button>
   </div>
 </div>

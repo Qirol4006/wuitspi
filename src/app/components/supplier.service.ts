@@ -4,27 +4,27 @@ import {HttpClient} from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class SupplierService {
 
-  baseUrl = "http://localhost:5278/api/Category";
+  baseUrl = "http://localhost:5278/api/Supplier";
 
   httpClient = inject(HttpClient);
-
   constructor() { }
 
-  create(categoryModel: any) {
-    return this.httpClient.post(this.baseUrl + "/Create", categoryModel);
-  }
-  getAll(){
-    return this.httpClient.get(this.baseUrl + "/Get");
-  }
-
-  getById(id: number){
+  getById(id: any) {
     return this.httpClient.get(this.baseUrl + "/GetByID/" + id);
   }
 
   update(categoryModel: any) {
     return this.httpClient.put(this.baseUrl + "/Update", categoryModel);
+  }
+
+  create(categoryModel: any) {
+    return this.httpClient.post(this.baseUrl + "/Create", categoryModel);
+  }
+
+  getAll() {
+    return this.httpClient.get(this.baseUrl + "/Get");
   }
 
   delete(id: any) {
