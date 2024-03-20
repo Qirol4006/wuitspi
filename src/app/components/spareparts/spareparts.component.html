@@ -24,6 +24,8 @@
           | Serial Number: {{ sparePart.serialNumber }}
           | Manfacturer: {{ sparePart.manufacturer }}
           | Notes: {{ sparePart.notes }}
+          {{ sparePart.supplier ? '| Supplier: ' + sparePart.supplier.name : ''}}
+          {{ sparePart.category ? '| Category: ' + sparePart.category.name : ''}}
         </div>
       </div>
       <div class="flex flex-row gap-2 h-fit">
