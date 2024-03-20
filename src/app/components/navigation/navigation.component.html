@@ -1,6 +1,7 @@
 <mat-toolbar class="flex justify-between">
   <button mat-icon-button
           class="example-icon"
+          (click)="routerNavigate('')"
           aria-label="Home">
     <mat-icon>home</mat-icon>
   </button>
@@ -13,6 +14,10 @@
     <button mat-button
             (click)="routerNavigate('suppliers')">
       Suppliers
+    </button>
+    <button mat-button
+            (click)="routerNavigate('spareparts')">
+      Spare Parts
     </button>
   </div>
 </mat-toolbar>
